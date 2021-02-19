@@ -35,3 +35,4 @@ $ cat -A "fileName.sh"
         -   `-P, --port= `设置 `docker`端口与`mysql`端口映射默认为`3306`
         -   `-d, --data=<path>`设置数据文件映射目录
         -   `-v, --version=<number>`设置安装的`mysql`版本号
+    -   **会报个错误`ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)`但是好像没有任何影响 待解决**
