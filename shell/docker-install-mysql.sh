@@ -7,13 +7,13 @@ then
     echo "    -?, --help                     Display this help and exit."
     echo "    -h, --help                     Synonym for -?"
     echo "    -u, --user=name                User for set mysql login default root."
-    echo "    -n, --name                     The name of the Docker container."
+    echo "    -n, --name                     The name of the Docker container default mysql."
     echo "    -p, --password[=name]          Password to set mysql login default root."
     echo "    -P, --port=                    Port number to use for connection or 0 for default to,
                                              As a mapping of $MYSQL_TCP_PORT in my.cnf in docker and mysql
                                              built-in default (3306)."
-    echo "    -d, --data=<path>              Mapping of mysql data Default, /var/lib/mysql configuration in the server
-                                             is mapped to the /docker/mysql/data configuration in docker."
+    echo "    -d, --data=<path>              Mapping of mysql data Default, /docker/mysql/data  configuration in the server
+                                             is mapped to the /var/lib/mysql configuration in docker."
     echo "    -v, --version=<number>         Specify the version number of mysql pulled by docker default 5.7"
 else
    # 说明
@@ -95,6 +95,10 @@ EOF
 
 # 重启mysql
 docker restart "$opt_name"
-alias mysql="mysql -h 127.0.0.1 -P $opt_port"
+# 设置永久alias
+opt_alias="mysql -h 127.0.0.1 -P $opt_port"
+echo "alias mysql='$opt_alias'"  >> ~/.bashrc
+# 这个的目的是让每次打开终端自动source ~/.bashrc 如果写入过一次就可以注释掉了
+# echo "source ~/.bashrc" >> ~/.bash_profile
 
 fi
