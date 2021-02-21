@@ -49,3 +49,4 @@ $ cat -A "fileName.sh"
         -   将[`redis.conf`](conf/redis.conf)复制到[`docker-install-redis.sh`](shell/docker-install-redis.sh)相同目录下
         -   然后执行`./docker-install-redis.sh`
     -   **注意：中间涉及alias永久使用的方式**
+-   [`java-install.sh`](shell/java-install.sh)下载`openJDK-1.8`
