@@ -96,8 +96,8 @@ EOF
 # 重启mysql
 docker restart "$opt_name"
 # 设置永久alias
-opt_alias="mysql -h 127.0.0.1 -P $opt_port"
-echo "alias mysql='$opt_alias'"  >> ~/.bashrc
+#opt_alias="mysql -h 127.0.0.1 -P $opt_port"
+#echo "alias mysql='$opt_alias'"  >> ~/.bashrc
 # 这个的目的是让每次打开终端自动source ~/.bashrc 如果写入过一次就可以注释掉了
 # echo "source ~/.bashrc" >> ~/.bash_profile
 
